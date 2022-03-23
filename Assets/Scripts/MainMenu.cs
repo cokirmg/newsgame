@@ -20,4 +20,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log(volume);
         audioMixer.SetFloat("volume", volume);
     }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
