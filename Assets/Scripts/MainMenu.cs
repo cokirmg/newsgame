@@ -6,9 +6,11 @@ using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public GameObject phone;
+
     public void PlayGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        phone.SetActive(true);
     }
     public void QuitGame()
     {

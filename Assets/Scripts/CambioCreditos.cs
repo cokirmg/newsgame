@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 public class CambioCreditos : MonoBehaviour
 {
 
-    private void OnTriggerEnter(Collider other)
+    private void CambioInicio()
     {
-        if(other.tag == "Texto")
-        {
+       
             SceneManager.LoadScene("Menu");
-        }
+      
     }
 }
