@@ -5,11 +5,11 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public static float dropTime = 1f;
-    GameObject[] blocks;
+    public GameObject[] blocks;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawn();
     }
 
     // Update is called once per frame
@@ -22,6 +22,6 @@ public class GameLogic : MonoBehaviour
     {
         float escogerBloque = Random.Range(0, 1f);
         escogerBloque *= blocks.Length;
-        Instantiate(blocks[(int)escogerBloque]);
+        Instantiate(blocks[Mathf.FloorToInt(escogerBloque)]);
     }
 }

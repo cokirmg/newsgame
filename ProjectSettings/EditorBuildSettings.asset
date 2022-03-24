@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene2.unity
     guid: 8e662f8e0bf9f344ea057914adba62f5
+  - enabled: 1
+    path: Assets/Scenes/CaidaObjetos.unity
+    guid: d2319f10b6a861b4f8c001b4b0a4622b
   m_configObjects: {}
