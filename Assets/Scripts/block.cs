@@ -6,8 +6,9 @@ public class block : MonoBehaviour
 {
     GameLogic gameLogic;
     float timer = 0f;
-    bool movable = true;
+    float Velocidad = 7f;
     GameObject rig;
+    bool caida = true;
    
     // Start is called before the first frame update
     void Start()
@@ -18,20 +19,25 @@ public class block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movable)
-        {
-            timer += 1 * Time.deltaTime;
-            if (timer > GameLogic.dropTime)
-            {
+       
+            //timer += 1 * Time.deltaTime;
+            
+            
 
-                gameObject.transform.position -= new Vector3(0, 1, 0);
-                timer = 0;
-                gameLogic.spawn();
+            /*gameObject.transform.position -= new Vector3(0, 1, 0);
+            timer = 0;*/
+                transform.position -= new Vector3(0, Velocidad, 0) * Time.deltaTime;
+                
                 
                
 
-            }
-        }
+    }
+        
        
+    
+   
+    public void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
