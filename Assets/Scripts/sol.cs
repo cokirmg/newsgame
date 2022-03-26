@@ -38,12 +38,6 @@ public class sol : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D()
-    {
-
-        
-        
-    }
 
     IEnumerator SunCooldown()
     {

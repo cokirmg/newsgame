@@ -8,6 +8,8 @@ TagManager:
   - Object
   - solesito
   - nube
+  - waypoint2
+  - waypoint1
   layers:
   - Default
   - TransparentFX
