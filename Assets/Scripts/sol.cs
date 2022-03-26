@@ -32,7 +32,7 @@ public class sol : MonoBehaviour
     {
             if(!nube.nubeEspera)
             {
-            player.vida = player.vida - 5;
+            player.vida = player.vida - 1;
             //player.Loadplayervida();
 
             StartCoroutine(SunCooldown());

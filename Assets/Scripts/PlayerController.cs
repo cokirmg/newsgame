@@ -66,11 +66,13 @@ public class PlayerController : MonoBehaviour
     {
         if(izq && dch == false)
         {
-            rb.AddForce(new Vector2(-speedForce, 0) * Time.deltaTime);
+            //rb.AddForce(new Vector2(-speedForce, 0) * Time.deltaTime);
+            transform.position += new Vector3(-speedForce, 0f, 0f) * Time.deltaTime;
         }
         else if (dch && izq == false )
         {
-            rb.AddForce(new Vector2(speedForce, 0) * Time.deltaTime);
+            //rb.AddForce(new Vector2(speedForce, 0) * Time.deltaTime);
+            transform.position += new Vector3(speedForce, 0f, 0f) * Time.deltaTime;
         }
         else if (dch && izq )
         {
@@ -80,7 +82,8 @@ public class PlayerController : MonoBehaviour
         if(jump)
         {
             jump = false;
-            rb.AddForce(new Vector2(0, salto));
+            //rb.AddForce(new Vector2(0, salto));
+            transform.position += new Vector3(0f, salto, 0f) * Time.deltaTime;
         }
 
     }
