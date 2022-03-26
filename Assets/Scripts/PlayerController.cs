@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public float speedForce;
     public float salto;
 
+    public int vida = 100;
+
+
     public void clickLeft()
     {
         izq = true;
