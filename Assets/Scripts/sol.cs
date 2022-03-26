@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class sol : MonoBehaviour
 {
     public bool sunDamage = true;
     public PlayerController player;
+    public Text textovida;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,19 +17,38 @@ public class sol : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(sunDamage)
+        textovida.text = "vida:" + player.vida;
+        if (sunDamage == true)
         {
-
-            StartCoroutine(SunCooldown());
+            quitarVida();
+            player.Saveplayervida();
         }
+
+    }
+
+    public void quitarVida()
+    {
+        
+            player.vida = player.vida - 5;
+            //player.Loadplayervida();
+            
+            StartCoroutine(SunCooldown());
+        
+    }
+
+    public void OnTriggerEnter2D()
+    {
+
+        
+        
     }
 
     IEnumerator SunCooldown()
     {
         sunDamage = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         sunDamage = true;
     }
 }

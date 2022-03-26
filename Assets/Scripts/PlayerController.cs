@@ -12,8 +12,31 @@ public class PlayerController : MonoBehaviour
     public float speedForce;
     public float salto;
 
-    public int vida = 100;
+    public int vida;
 
+
+    public void Saveplayervida()
+    {
+        //vida = 100;
+        PlayerPrefs.SetInt("vidaPlayer", vida);
+    }
+    public void Loadplayervida()
+    {
+        //vida = PlayerPrefs.GetInt("vidaPlayer");
+        Debug.Log(".....");
+        if (PlayerPrefs.HasKey("vidaPlayer"))
+        {
+            vida = PlayerPrefs.GetInt("vidaPlayer");
+        }
+    }
+
+
+    public void Start()
+    {
+        Loadplayervida();
+
+        
+    }
 
     public void clickLeft()
     {
@@ -31,6 +54,10 @@ public class PlayerController : MonoBehaviour
     {
         dch = false;
     }
+
+
+
+
     private void FixedUpdate()
     {
         if(izq && dch == false)
@@ -53,6 +80,10 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Object")

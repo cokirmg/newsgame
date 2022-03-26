@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Texto
   - Object
+  - solesito
+  - nube
   layers:
   - Default
   - TransparentFX
