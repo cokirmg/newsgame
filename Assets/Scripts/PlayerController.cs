@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
     {
         Loadplayervida();
 
+        if(vida <= 0)
+        {
+            vida = 100;
+        }
         
     }
 

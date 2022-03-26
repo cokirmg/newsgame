@@ -8,7 +8,7 @@ public class sol : MonoBehaviour
     public bool sunDamage = true;
     public PlayerController player;
     public Text textovida;
-
+    public nube nube;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +30,14 @@ public class sol : MonoBehaviour
 
     public void quitarVida()
     {
-        
+            if(!nube.nubeEspera)
+            {
             player.vida = player.vida - 5;
             //player.Loadplayervida();
-            
+
             StartCoroutine(SunCooldown());
-        
+            }
+            
     }
 
 
