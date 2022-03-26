@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+
         instance = this;
         InvokeRepeating("spawnObject", 3f, 3f);
         Debug.Log(countinstance);
