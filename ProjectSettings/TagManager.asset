@@ -10,6 +10,7 @@ TagManager:
   - nube
   - waypoint2
   - waypoint1
+  - ladrillo
   layers:
   - Default
   - TransparentFX
