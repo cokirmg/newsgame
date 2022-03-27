@@ -11,6 +11,11 @@ TagManager:
   - waypoint2
   - waypoint1
   - ladrillo
+  - agua
+  - Tool1
+  - Tool3
+  - Tool2
+  - jugable
   layers:
   - Default
   - TransparentFX
