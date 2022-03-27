@@ -19,6 +19,7 @@ public class Objeto : MonoBehaviour
         if (collision.gameObject.tag == "ladrillo")
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject);
             GameManager.Instance.eliminarObjeto(posicion);
         }
     }
