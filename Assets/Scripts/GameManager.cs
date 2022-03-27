@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
 
         instance = this;
-        InvokeRepeating("spawnObject", 3f, 3f);
+        InvokeRepeating("spawnObject", 4f, 4f);
         Debug.Log(countinstance);
 
         

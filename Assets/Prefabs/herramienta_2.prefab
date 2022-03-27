@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posicion: 0
+  newParent: {fileID: 923143361403796140, guid: 96a689f2601ae4946867ffd35f3c0b89, type: 3}
+  objeto: {fileID: 6473287531528009427}
