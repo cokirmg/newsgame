@@ -82,12 +82,13 @@ public class PlayerController : MonoBehaviour
             //rb.AddForce(new Vector2(speedForce, 0) * Time.deltaTime);
             transform.position += new Vector3(speedForce, 0f, 0f) * Time.deltaTime;
         }
-        else if (dch && izq )
+        else if (dch && izq)
         {
             jump = true;
         }
+        
 
-        if(jump)
+        if(jump )
         {
             jump = false;
             //rb.AddForce(new Vector2(0, salto));
