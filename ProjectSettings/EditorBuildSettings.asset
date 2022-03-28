@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaidaObjetos.unity
     guid: d2319f10b6a861b4f8c001b4b0a4622b
+  - enabled: 1
+    path: Assets/Scenes/RodriEscena.unity
+    guid: faa2db4a98989394bae18687badb8f13
   m_configObjects: {}

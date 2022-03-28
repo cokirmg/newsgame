@@ -7,6 +7,10 @@ public class DialogoManager : MonoBehaviour
 {
     public Queue <string> sentences;
     public Text textoDigalogo;
+    public GameObject phone;
+    public GameObject dialogo;
+    public GameObject portada;
+    public GameObject botonesCatalago;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +44,10 @@ public class DialogoManager : MonoBehaviour
 
     public void TerminarDialogo()
     {
+        phone.SetActive(true);
+        dialogo.SetActive(false);
+        //portada.SetActive(false);
+        botonesCatalago.SetActive(true);
         Debug.Log("Terminar conversación");
     }
 

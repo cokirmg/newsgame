@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        phone.SetActive(true);
+        //phone.SetActive(true);
     }
     public void QuitGame()
     {
@@ -25,5 +25,10 @@ public class MainMenu : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void CambiarEscena(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }
