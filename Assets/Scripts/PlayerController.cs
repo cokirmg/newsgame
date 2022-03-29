@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public bool dch = false;
     public bool izq = false;
     public bool jump = false;
+    public bool pausarJuego = false;
     public int salto;
     public Rigidbody2D rb;
     public float speedForce;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public GameObject cara;
     public GameObject brazo1;
     public GameObject brazo2;
+    public GameObject fichaCasos;
+    public GameObject modoPausa;
     public Image t1, t2, t3;
     private Color[] color= {new Color(1, 1, 1, 1),new Color(1, 1, 0, 1), new Color(0, 0, 0, 1), new Color(0.5f, 0.5f, 0.5f, 1), new Color(118, 57, 31, 255)};
     private Color[] colorpiel = { new Color(255, 255, 255, 255),  new Color(118, 57, 31, 255), new Color(67,30,16, 255), new Color(203, 134, 108, 255) };
@@ -139,20 +142,48 @@ public class PlayerController : MonoBehaviour
             vida = vida - 20;
             if (vida <= 0)
             {
-                Color piel= color[Random.Range(0, color.Length)];
-                transform.position = new Vector3(-1.69f, -4.637184f, 0);
-                vida = 100;
-                PlayerPrefs.SetInt("vidaPlayer", vida);
-                pelo.GetComponent<SpriteRenderer>().color = color[Random.Range(0, color.Length)];
-                cara.GetComponent<SpriteRenderer>().color = piel;
-                brazo1.GetComponent<SpriteRenderer>().color = piel;
-                brazo2.GetComponent<SpriteRenderer>().color = piel;
-                t1.enabled = false;
-                t2.enabled =  false;
-                t3.enabled = false;
+                pausarJuego = false;
+                if (pausarJuego == false)
+                {
+                    Pausar();
+                    
+                }
+                
 
             }
-            
         }
+         
+    }
+
+
+    public void CambiarPersonaje()
+    {
+        Color piel = color[Random.Range(0, color.Length)];
+        transform.position = new Vector3(-1.69f, -4.637184f, 0);
+        vida = 100;
+        PlayerPrefs.SetInt("vidaPlayer", vida);
+        pelo.GetComponent<SpriteRenderer>().color = color[Random.Range(0, color.Length)];
+        cara.GetComponent<SpriteRenderer>().color = piel;
+        brazo1.GetComponent<SpriteRenderer>().color = piel;
+        brazo2.GetComponent<SpriteRenderer>().color = piel;
+        t1.enabled = false;
+        t2.enabled = false;
+        t3.enabled = false;
+        //pausarJuego = true;
+    }
+
+    public void Pausar()
+    {
+        fichaCasos.SetActive(true);
+        Time.timeScale = 0;
+        
+    }
+    public void Reanudar()
+    {
+        Debug.Log(pausarJuego);
+        fichaCasos.SetActive(false);
+        Time.timeScale = 1;
+        CambiarPersonaje();
+
     }
 }
