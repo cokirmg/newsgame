@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private bool encontrarposicion = false;
     private bool spawnbool = true;
     private bool corutina = true;
-    private int nextPoint = 0;
+    //private int nextPoint = 0;
     //Tiempo de repeticion del spawner
     public float t_respawn = 1;
     //Intervalo de repeticion del spawner

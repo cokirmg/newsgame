@@ -10,17 +10,20 @@ public class PlayerController : MonoBehaviour
     public bool jump = false;
     public bool pausarJuego = false;
     public int salto;
+    public int saludInicial;
+    public int saludActual;
     public Rigidbody2D rb;
     public float speedForce;
     public Text textovida;
-    public int vida;
     public GameObject pelo;
     public GameObject cara;
     public GameObject brazo1;
     public GameObject brazo2;
     public GameObject fichaCasos;
     public GameObject modoPausa;
+    public GameObject modoPlay;
     public Image t1, t2, t3;
+    public BarraSalud barraSalud;
     private Color[] color= {new Color(1, 1, 1, 1),new Color(1, 1, 0, 1), new Color(0, 0, 0, 1), new Color(0.5f, 0.5f, 0.5f, 1), new Color(118, 57, 31, 255)};
     private Color[] colorpiel = { new Color(255, 255, 255, 255),  new Color(118, 57, 31, 255), new Color(67,30,16, 255), new Color(203, 134, 108, 255) };
     //-1.69, -4.637184
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public void Saveplayervida()
     {
         //vida = 100;
-        PlayerPrefs.SetInt("vidaPlayer", vida);
+        PlayerPrefs.SetInt("vidaPlayer", saludActual);
     }
     public void Loadplayervida()
     {
@@ -36,7 +39,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(".....");
         if (PlayerPrefs.HasKey("vidaPlayer"))
         {
-            vida = PlayerPrefs.GetInt("vidaPlayer");
+            saludActual = PlayerPrefs.GetInt("vidaPlayer");
         }
     }
 
@@ -46,10 +49,13 @@ public class PlayerController : MonoBehaviour
        
         Loadplayervida();
 
-        if(vida <= 0)
+        if(saludActual <= 0)
         {
-            vida = 100;
+            saludInicial = 100;
         }
+
+        saludActual = saludInicial;
+        barraSalud.EstablecerVidaMaxima(saludInicial);
         
     }
 
@@ -132,15 +138,16 @@ public class PlayerController : MonoBehaviour
             }
             else if (collision.gameObject.tag == "agua")
             {
-                vida += 10;
+                saludActual += 10;
             }
         }
         else if (collision.gameObject.tag == "ladrillo")
         {
             Destroy(collision.gameObject);
             Debug.Log("UWU");
-            vida = vida - 20;
-            if (vida <= 0)
+            saludActual = saludActual - 20;
+            barraSalud.EstablecerVida(saludActual);
+            if (saludActual <= 0)
             {
                 pausarJuego = false;
                 if (pausarJuego == false)
@@ -160,8 +167,9 @@ public class PlayerController : MonoBehaviour
     {
         Color piel = color[Random.Range(0, color.Length)];
         transform.position = new Vector3(-1.69f, -4.637184f, 0);
-        vida = 100;
-        PlayerPrefs.SetInt("vidaPlayer", vida);
+        saludActual = 100;
+        barraSalud.EstablecerVida(saludActual);
+        PlayerPrefs.SetInt("vidaPlayer", saludActual);
         pelo.GetComponent<SpriteRenderer>().color = color[Random.Range(0, color.Length)];
         cara.GetComponent<SpriteRenderer>().color = piel;
         brazo1.GetComponent<SpriteRenderer>().color = piel;
@@ -180,10 +188,23 @@ public class PlayerController : MonoBehaviour
     }
     public void Reanudar()
     {
-        Debug.Log(pausarJuego);
         fichaCasos.SetActive(false);
         Time.timeScale = 1;
         CambiarPersonaje();
 
+    }
+
+    public void BotonPausa()
+    {
+        Time.timeScale = 0;
+        modoPausa.SetActive(true);
+        modoPlay.SetActive(false);
+    }
+
+    public void BotonVolver()
+    {
+        Time.timeScale = 1;
+        modoPausa.SetActive(false);
+        modoPlay.SetActive(true);
     }
 }

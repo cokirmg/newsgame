@@ -19,7 +19,7 @@ public class sol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textovida.text = "vida:" + player.vida;
+       
         if (sunDamage == true)
         {
             quitarVida();
@@ -32,7 +32,7 @@ public class sol : MonoBehaviour
     {
             if(!nube.nubeEspera)
             {
-            player.vida = player.vida - 1;
+            player.saludActual = player.saludActual - 1;
             //player.Loadplayervida();
 
             StartCoroutine(SunCooldown());
