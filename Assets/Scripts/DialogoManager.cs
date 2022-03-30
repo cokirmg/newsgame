@@ -11,10 +11,13 @@ public class DialogoManager : MonoBehaviour
     public GameObject dialogo;
     public GameObject portada;
     public GameObject botonesCatalago;
+    public GameObject jefe;
+    public bool terminadoDialogo = false;
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+       
     }
 
 
@@ -44,11 +47,14 @@ public class DialogoManager : MonoBehaviour
 
     public void TerminarDialogo()
     {
+        terminadoDialogo = true;
         phone.SetActive(true);
         dialogo.SetActive(false);
         //portada.SetActive(false);
         botonesCatalago.SetActive(true);
+        jefe.SetActive(false);
         Debug.Log("Terminar conversación");
+        
     }
 
 }
