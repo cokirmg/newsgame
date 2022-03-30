@@ -26,6 +26,13 @@ public class PlayerController : MonoBehaviour
     public BarraSalud barraSalud;
     private Color[] color= {new Color(1, 1, 1, 1),new Color(1, 1, 0, 1), new Color(0, 0, 0, 1), new Color(0.5f, 0.5f, 0.5f, 1), new Color(118, 57, 31, 255)};
     private Color[] colorpiel = { new Color(255, 255, 255, 255),  new Color(118, 57, 31, 255), new Color(67,30,16, 255), new Color(203, 134, 108, 255) };
+
+    public GameObject fase1;
+    public GameObject fase2;
+    public GameObject fase3;
+
+    public GameObject fondoMuerte;
+    public int numestadio=0;
     //-1.69, -4.637184
     public bool tool1, tool2, tool3;
     public void Saveplayervida()
@@ -123,23 +130,54 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.eliminarObjeto(collision.gameObject.GetComponent<Objeto>().posicion);
             if (collision.gameObject.tag == "Tool1")
             {
+                if(!tool1)
+                {
+                    numestadio++;
+                }
                 tool1 = true;
                 t1.enabled = true;
+                
             }
             else if (collision.gameObject.tag == "Tool2")
             {
+                if(!tool2)
+                {
+                    numestadio++;
+                }
                 tool2 = true;
                 t2.enabled = true;
+                
             }
             else if (collision.gameObject.tag == "Tool3")
             {
+                if(!tool3)
+                {
+                    numestadio++;
+                }
                 tool3 = true;
                 t3.enabled = true;
+                
             }
             else if (collision.gameObject.tag == "agua")
             {
                 saludActual += 10;
             }
+
+            if(numestadio == 1)
+            {
+                fase1.SetActive(true);
+            }
+            else if(numestadio == 2)
+            {
+                fase1.SetActive(false);
+                fase2.SetActive(true);
+            }
+            else if(numestadio==3)
+            {
+                fase3.SetActive(true);
+                fase2.SetActive(false);
+            }
+
         }
         else if (collision.gameObject.tag == "ladrillo")
         {
@@ -182,12 +220,14 @@ public class PlayerController : MonoBehaviour
 
     public void Pausar()
     {
+        fondoMuerte.SetActive(true);
         fichaCasos.SetActive(true);
         Time.timeScale = 0;
         
     }
     public void Reanudar()
     {
+        fondoMuerte.SetActive(false);
         fichaCasos.SetActive(false);
         Time.timeScale = 1;
         CambiarPersonaje();
