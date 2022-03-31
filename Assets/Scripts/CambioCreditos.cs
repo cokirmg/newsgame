@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CambioCreditos : MonoBehaviour
 {
 
-    private void CambioInicio()
+    public void CambioInicio()
     {
        
             SceneManager.LoadScene("Menu");
