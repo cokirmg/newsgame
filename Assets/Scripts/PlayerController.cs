@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
     //-1.69, -4.637184
     public bool tool1, tool2, tool3;
 
+    public AudioSource audio1;
+    public AudioClip tool;
+    public AudioClip hit;
+    public AudioClip muerte;
+
     public string[] nombres =
     {
         "Raúl Vargas",
@@ -272,8 +277,8 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        
-        
+        Muerte();
+
     }
 
     public void AnimacionAndar()
@@ -301,6 +306,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Tool1" || collision.gameObject.tag == "Tool2" || collision.gameObject.tag == "Tool3" || collision.gameObject.tag == "agua")
         {
+            audio1.PlayOneShot(tool);
             Destroy(collision.gameObject);
             GameManager.Instance.eliminarObjeto(collision.gameObject.GetComponent<Objeto>().posicion);
             if (collision.gameObject.tag == "Tool1")
@@ -356,26 +362,43 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "ladrillo")
         {
+            audio1.PlayOneShot(hit);
             Destroy(collision.gameObject);
             Debug.Log("UWU");
             saludActual = saludActual - 20;
             barraSalud.EstablecerVida(saludActual);
-            if (saludActual <= 0)
-            {
-                pausarJuego = false;
-                if (pausarJuego == false)
-                {
-                    Pausar();
-                    
-                }
-                
+            //if (saludActual <= 0)
+            //{
 
-            }
+            //    pausarJuego = false;
+            //    if (pausarJuego == false)
+            //    {
+            //        Pausar();
+
+            //    }
+
+
+            //}
+            
         }
          
     }
 
+    public void Muerte()
+    {
+        if (saludActual <= 0)
+        {
+            audio1.PlayOneShot(muerte);
+            pausarJuego = false;
+            if (pausarJuego == false)
+            {
+                Pausar();
 
+            }
+
+
+        }
+    }
     public void CambiarPersonaje()
     {
         Color piel = color[Random.Range(0, color.Length)];
