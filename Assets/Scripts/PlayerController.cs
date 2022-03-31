@@ -26,13 +26,15 @@ public class PlayerController : MonoBehaviour
     public GameObject modoPlay;
     public Image t1, t2, t3;
     public BarraSalud barraSalud;
-    private Animator anim;
+    public Animator anim;
     private Color[] color= {new Color(1, 1, 1, 1),new Color(1, 1, 0, 1), new Color(0, 0, 0, 1), new Color(0.5f, 0.5f, 0.5f, 1), new Color(118, 57, 31, 255)};
     private Color[] colorpiel = { new Color(255, 255, 255, 255),  new Color(118, 57, 31, 255), new Color(67,30,16, 255), new Color(203, 134, 108, 255) };
 
     public GameObject fase1;
     public GameObject fase2;
     public GameObject fase3;
+
+    public Transform spriteWorker;
 
     public GameObject fondoMuerte;
     public int numestadio=0;
@@ -184,25 +186,27 @@ public class PlayerController : MonoBehaviour
 
     public void clickLeft()
     {
+        Debug.Log("izq true");
         izq = true;
-        anim.SetBool("Andar", true);
+        spriteWorker.localScale=new Vector3(-1,1,1);
 
     }
     public void clickRight()
     {
+        Debug.Log("dch true");
         dch = true;
-        anim.SetBool("Andar", true);
+        spriteWorker.localScale = new Vector3(1, 1, 1);
 
     }
     public void realeaseLeft()
     {
         izq = false;
-        anim.SetBool("Andar", false);
+        
     }
     public void realeaseRight()
     {
         dch = false;
-        anim.SetBool("Andar", false);
+        
     }
 
 
@@ -212,6 +216,7 @@ public class PlayerController : MonoBehaviour
     {
         if(izq && dch == false)
         {
+            Debug.Log("bool animacion4sgsdsdg");
             //rb.AddForce(new Vector2(-speedForce, 0) * Time.deltaTime);
             transform.position += new Vector3(-speedForce, 0f, 0f) * Time.deltaTime;
             
@@ -219,6 +224,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (dch && izq == false )
         {
+            Debug.Log("bool animacionsgh");
             //rb.AddForce(new Vector2(speedForce, 0) * Time.deltaTime);
             transform.position += new Vector3(speedForce, 0f, 0f) * Time.deltaTime;
            
@@ -245,6 +251,28 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Saltar", false);
         }
+
+
+        if (izq && dch == false)
+        {
+            Debug.Log("bool animacion");
+            anim.SetBool("andar", true);
+
+
+        }
+        else if (dch && izq == false)
+        {
+            Debug.Log("bool animacion");
+            anim.SetBool("andar", true);
+
+        }
+        else
+        {
+            anim.SetBool("andar", false);
+        }
+
+
+        
         
     }
 
