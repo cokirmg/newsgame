@@ -1804,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083184957209419933, guid: 24e04166647f86349b5ad0c9ab9dfa26, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.07
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 4083184957209419933, guid: 24e04166647f86349b5ad0c9ab9dfa26, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3921,7 +3921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223318744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -143, y: -254, z: 0}
+  m_LocalPosition: {x: -146.88, y: -254, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 660625995}
@@ -4162,7 +4162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237654494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.764287, y: 1.3399944, z: -0.14116612}
+  m_LocalPosition: {x: -9.07, y: 1.24, z: -0.14116612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6409,6 +6409,7 @@ GameObject:
   - component: {fileID: 1916106131}
   - component: {fileID: 1916106130}
   - component: {fileID: 1916106129}
+  - component: {fileID: 1916106132}
   m_Layer: 5
   m_Name: Creditos
   m_TagString: Untagged
@@ -6478,7 +6479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1916106130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916106132}
+        m_TargetAssemblyTypeName: CambioCreditos, Assembly-CSharp
+        m_MethodName: Cambio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1916106130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6517,6 +6530,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916106127}
   m_CullTransparentMesh: 1
+--- !u!114 &1916106132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916106127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e525aa38721b7674cb2550eee015c78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1929772539
 GameObject:
   m_ObjectHideFlags: 0
