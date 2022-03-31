@@ -16,6 +16,7 @@ TagManager:
   - Tool3
   - Tool2
   - jugable
+  - boton
   layers:
   - Default
   - TransparentFX
