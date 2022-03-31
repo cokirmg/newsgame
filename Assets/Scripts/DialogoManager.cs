@@ -13,6 +13,7 @@ public class DialogoManager : MonoBehaviour
     public GameObject botonesCatalago;
     public GameObject jefe;
     public bool terminadoDialogo = false;
+    
     // Start is called before the first frame update
     void Start()
     {

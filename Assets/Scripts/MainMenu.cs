@@ -7,7 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public GameObject phone;
+    public AudioSource au;
+    public AudioClip clip;
 
+    
     public void PlayGame()
     {
         //phone.SetActive(true);
@@ -16,6 +19,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+        au.PlayOneShot(clip);
     }
     public void SetVolume(float volume)
     {
@@ -24,11 +28,17 @@ public class MainMenu : MonoBehaviour
     }
     public void GoToMenu()
     {
+        Debug.Log("UWUUUUU");
         SceneManager.LoadScene("Menu");
     }
 
     public void CambiarEscena(string name)
     {
         SceneManager.LoadScene(name);
+    }
+    public void sonido()
+    {
+        Debug.Log("llega aqui");
+        au.PlayOneShot(clip);
     }
 }
