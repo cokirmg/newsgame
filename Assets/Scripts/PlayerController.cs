@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public int salto;
     public int saludInicial;
     public int saludActual;
+    public Button button;
     public Rigidbody2D rb;
     public float speedForce;
     public Text textovida;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public GameObject modoPlay;
     public Image t1, t2, t3;
     public BarraSalud barraSalud;
+    private Animator anim;
     private Color[] color= {new Color(1, 1, 1, 1),new Color(1, 1, 0, 1), new Color(0, 0, 0, 1), new Color(0.5f, 0.5f, 0.5f, 1), new Color(118, 57, 31, 255)};
     private Color[] colorpiel = { new Color(255, 255, 255, 255),  new Color(118, 57, 31, 255), new Color(67,30,16, 255), new Color(203, 134, 108, 255) };
 
@@ -151,8 +153,8 @@ public class PlayerController : MonoBehaviour
 
     public void Saveplayervida()
     {
-        //vida = 100;
         PlayerPrefs.SetInt("vidaPlayer", saludActual);
+
     }
     public void Loadplayervida()
     {
@@ -167,7 +169,7 @@ public class PlayerController : MonoBehaviour
    
     public void Start()
     {
-       
+        anim = GetComponent<Animator>();
         Loadplayervida();
 
         if(saludActual <= 0)
@@ -183,18 +185,24 @@ public class PlayerController : MonoBehaviour
     public void clickLeft()
     {
         izq = true;
+        anim.SetBool("Andar", true);
+
     }
     public void clickRight()
     {
         dch = true;
+        anim.SetBool("Andar", true);
+
     }
     public void realeaseLeft()
     {
         izq = false;
+        anim.SetBool("Andar", false);
     }
     public void realeaseRight()
     {
         dch = false;
+        anim.SetBool("Andar", false);
     }
 
 
@@ -206,24 +214,49 @@ public class PlayerController : MonoBehaviour
         {
             //rb.AddForce(new Vector2(-speedForce, 0) * Time.deltaTime);
             transform.position += new Vector3(-speedForce, 0f, 0f) * Time.deltaTime;
+            
+           
         }
         else if (dch && izq == false )
         {
             //rb.AddForce(new Vector2(speedForce, 0) * Time.deltaTime);
             transform.position += new Vector3(speedForce, 0f, 0f) * Time.deltaTime;
+           
+
         }
-        else if (dch && izq)
+        if (dch && izq)
         {
             jump = true;
+            
         }
         
 
-        if(jump )
+
+        if (jump )
         {
+            anim.SetBool("Saltar", true);
             jump = false;
             //rb.AddForce(new Vector2(0, salto));
             transform.position += new Vector3(0f, salto, 0f) * Time.deltaTime;
+            
+
         }
+        else
+        {
+            anim.SetBool("Saltar", false);
+        }
+        
+    }
+
+    public void AnimacionAndar()
+    {
+        
+
+
+    }
+
+    public void DejarAndar()
+    {
         
     }
 
