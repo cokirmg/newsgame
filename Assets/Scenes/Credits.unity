@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -601,8 +601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.6898, y: -169.42288}
-  m_SizeDelta: {x: 150.8727, y: 566.4897}
+  m_AnchoredPosition: {x: 134.57495, y: -1301.6753}
+  m_SizeDelta: {x: 360.023, y: 2301.641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117967473
 MonoBehaviour:
@@ -626,7 +626,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ccf82769d8b3dba4dae70e4c60974286, type: 3}
-    m_FontSize: 17
+    m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -638,8 +638,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "F\xE1tima L\xF3pez D\xEDaz\n\nMaria Eulalia Diez Guadarrama\n\nDavid Bl\xE1zquez
-    Rey\n\n\nJorge Gancedo-Rodr\xEDguez Cuota\n\nMaria Eulalia Diez Guadarrama\n\nRodrigo
-    Manzano Guti\xE9rrez\n\n\xC1lvaro Quintanilla Carrasco\n\n\n\nRodrigo Manzano
+    Rey\n\n\n\n\nJorge Gancedo-Rodr\xEDguez Cuota\n\nMaria Eulalia Diez Guadarrama\n\nRodrigo
+    Manzano Guti\xE9rrez\n\n\xC1lvaro Quintanilla Carrasco\n\n\n\n\n\n\nRodrigo Manzano
     Guti\xE9rrez\n\nAlberte D\xEDaz R\xEDo\n\nMarta Crespo Jornet\n\n\n"
 --- !u!222 &1117967474
 CanvasRenderer:
@@ -910,8 +910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.84792, y: -169.42297}
-  m_SizeDelta: {x: 161.4957, y: 566.49}
+  m_AnchoredPosition: {x: -271.743, y: -1104}
+  m_SizeDelta: {x: 419.285, y: 1906.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695725085
 MonoBehaviour:
@@ -935,11 +935,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 39d7f1fed8686304899b8baa8e92603a, type: 3}
-    m_FontSize: 17
+    m_FontSize: 48
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 46
+    m_MaxSize: 48
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1

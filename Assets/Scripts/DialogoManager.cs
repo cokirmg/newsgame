@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogoManager : MonoBehaviour
 {
     public Queue <string> sentences;
-    public Text textoDigalogo;
+    public TextMeshProUGUI textoDigalogo;
     public GameObject phone;
     public GameObject dialogo;
     public GameObject portada;
