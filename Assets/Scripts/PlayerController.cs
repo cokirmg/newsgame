@@ -440,6 +440,7 @@ public class PlayerController : MonoBehaviour
     {
         fondoMuerte.SetActive(false);
         fichaCasos.SetActive(false);
+        modoPlay.SetActive(true);
         Time.timeScale = 1;
         CambiarPersonaje();
 
