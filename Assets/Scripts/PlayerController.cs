@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour
 
         saludActual = saludInicial;
         barraSalud.EstablecerVidaMaxima(saludInicial);
-        
+        BotonPausa();
     }
 
     public void clickLeft()
