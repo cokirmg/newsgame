@@ -187,7 +187,17 @@ public class PlayerController : MonoBehaviour
 
         saludActual = saludInicial;
         barraSalud.EstablecerVidaMaxima(saludInicial);
-        BotonPausa();
+       
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
+        if (sceneName == "RodriEscena")
+        {
+            Pausa();
+        }
     }
 
     public void clickLeft()
@@ -282,16 +292,16 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void AnimacionAndar()
+    public void Pausa()
     {
-        
 
+        Time.timeScale = 0;
 
     }
 
-    public void DejarAndar()
+    public void Jugar()
     {
-        
+        Time.timeScale = 1;
     }
 
     private void ganar()
@@ -442,7 +452,6 @@ public class PlayerController : MonoBehaviour
     {
         fondoMuerte.SetActive(false);
         fichaCasos.SetActive(false);
-        modoPlay.SetActive(true);
         Time.timeScale = 1;
         CambiarPersonaje();
 
