@@ -177,6 +177,8 @@ public class PlayerController : MonoBehaviour
    
     public void Start()
     {
+        
+
         anim = GetComponent<Animator>();
         Loadplayervida();
 
@@ -230,7 +232,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(izq && dch == false)
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(-speedForce, 0f, 0f) * Time.deltaTime;
+            spriteWorker.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(speedForce, 0f, 0f) * Time.deltaTime;
+            spriteWorker.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position += new Vector3(0f, salto, 0f) * Time.deltaTime;
+        }
+
+        if (izq && dch == false)
         {
             Debug.Log("bool animacion4sgsdsdg");
             //rb.AddForce(new Vector2(-speedForce, 0) * Time.deltaTime);
@@ -309,6 +328,7 @@ public class PlayerController : MonoBehaviour
         if(tool1==true && tool2==true && tool3 == true)
         {
             PlayerPrefs.GetInt("Qatar", 1);
+            SceneManager.LoadScene("MenU");
         }
     }
 
@@ -320,6 +340,9 @@ public class PlayerController : MonoBehaviour
             audio1.PlayOneShot(tool);
             Destroy(collision.gameObject);
             GameManager.Instance.eliminarObjeto(collision.gameObject.GetComponent<Objeto>().posicion);
+
+
+
             if (collision.gameObject.tag == "Tool1")
             {
                 if(!tool1)
@@ -370,7 +393,7 @@ public class PlayerController : MonoBehaviour
                 fase2.SetActive(false);
                
             }
-
+            ganar();
         }
         else if (collision.gameObject.tag == "ladrillo")
         {

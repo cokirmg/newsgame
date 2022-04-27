@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: -63.512}
-  m_SizeDelta: {x: 400, y: 1293.954}
+  m_AnchoredPosition: {x: -296.932, y: -145.023}
+  m_SizeDelta: {x: 593.864, y: 1818.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4683899700388001724
 CanvasRenderer:
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1170, y: 2535}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -582,6 +582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b8f0fb1cfeb3bd346900e389b264bd9d, type: 2}
   phone: {fileID: 0}
+  au: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &4683899701732885043
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 282.3, y: 597.46}
+  m_AnchoredPosition: {x: 406, y: 862}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4683899701732885039
@@ -849,8 +851,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -63.517017}
-  m_SizeDelta: {x: 400, y: 1294}
+  m_AnchoredPosition: {x: 290.323, y: -145.0299}
+  m_SizeDelta: {x: 580.646, y: 1818.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4683899702199668068
 CanvasRenderer:
